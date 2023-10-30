@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class MKController extends Controller
 {
-    private $data = [
+    private $MK = [
         [   'ID MK' => "MK3712",
             'NAMA MK' => "WEB PROGAMING",
             'JURUSAN' => "SISTEM KOMPUTER",
@@ -29,7 +29,7 @@ class MKController extends Controller
 
     public function index()
     {
-        return view('MK.index', ['data' => $this->data]);
+        return view('MK.index', ['MK' => $this->MK]);
     }
 
     public function create()
@@ -37,12 +37,4 @@ class MKController extends Controller
         return view('MK.create');
     }
 
-    public function edit($id)
-    {
-        return view('MK.edit', ['data' => $this->data[$id], 'id' => $id]);
-    }
-
-    public function show($id)
-    {
-    }
 }
