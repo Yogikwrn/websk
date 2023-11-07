@@ -3,7 +3,7 @@
 @section('title', 'Tambah Mata Kuliah')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ url('/MK') }}">Mahasiswa</a></li>
+    <li class="breadcrumb-item"><a href="{{ url('/mk') }}">Mata Kuliah</a></li>
     <li class="breadcrumb-item active">Tambah</li>
 @endsection
 
@@ -14,7 +14,7 @@
                 <h4 class="card-title">Form Tambah Mata Kuliah</h4>
             </div>
         </div>
-        <form action="{{ url('/MK') }}" method="POST">
+        <form action="{{ url('/mk') }}" method="POST">
             <div class="card-body">
                 @csrf
                 <div>
@@ -26,9 +26,12 @@
                     <input class="form-control" type="text" name="nama">
                 </div>
                 <div>
-                    <label class="form-label">Nama Mata Kuliah</label>
-                    <input class="form-control" type="text" name="nama">
-                    
+                    <label class="form-label">Jurusan</label>
+                    <select class="form-control" type="text" name="jurusan">
+                        <option value="1">TI</option>
+                        <option value="2">SK</option>
+                        <option value="3">DGM</option>
+                    <select>
                 </div>
 
             </div>

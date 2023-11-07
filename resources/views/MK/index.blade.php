@@ -14,7 +14,7 @@
                     <h4 class="card-title">Tabel Data Mata Kuliah</h4>
                 </div>
                 <div class="col-2">
-                    <a class="btn btn-sm btn-primary float-end" href="{{ url('/MK/create') }}">Tambah</a>
+                    <a class="btn btn-sm btn-primary float-end" href="{{ url('/mk/create') }}">Tambah</a>
                 </div>
             </div>
         </div>
@@ -29,14 +29,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($MK as $m)
+                    @foreach ($mk as $m)
                         <tr>
-                            <td>{{ $m['ID MK'] }}</td>
-                            <td>{{ $m['NAMA MK'] }}</td>
-                            <td>{{ $m['JURUSAN'] }}</td>
+                            <td>{{ $m->idmk }}</td>
+                            <td>{{ $m->namamk }}</td>
+                            <td>{{ $m->jurusan_nama }}</td>
                             <td class="float-end">
                                 <a class="btn btn-sm btn-warning"
-                                    href="{{ url('/MK/' . $loop->index . '/edit') }}">Ubah</a>
+                                    href="{{ url('/mk/' . $m->idmk . '/edit') }}">Ubah</a>
                                 <button class="btn btn-sm btn-danger">Hapus</button>
                             </td>
                         </tr>
