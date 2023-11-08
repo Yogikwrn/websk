@@ -14,23 +14,23 @@
                 <h4 class="card-title">Form Ubah Mahasiswa</h4>
             </div>
         </div>
-        <form action="{{ url('/mahasiswa' . $id) }}" method="POST">
+        <form action="{{ url('/mahasiswa/' . $id) }}" method="POST">
             @csrf
             @method('PUT')
             <div class="card-body">
                 <div>
                     <label class="form-label">NIM</label>
-                    <input class="form-control" type="text" name="nim" value="{{ $data['nim'] }}">
+                    <input class="form-control" type="text" name="nim" value="{{ $data->nim}}">
                 </div>
                 <div>
                     <label class="form-label">Nama</label>
-                    <input class="form-control" type="text" name="nama" value="{{ $data['nama'] }}">
+                    <input class="form-control" type="text" name="nama" value="{{ $data->nama }}">
                 </div>
                 <div>
                     <label class="form-label">Jurusan</label>
                     <select class="form-select" name="jurusan">
-                        @foreach
-                        <option {{ $data->jurusan_id == $j-> id  ? 'selected' : '' }} value="{{ $j->id }}">"{{ $j->nama }}"</option>
+                        @foreach($jurusan as $j)
+                        <option {{ $data->jurusan_id == $j-> id  ? 'selected' : '' }} value="{{ $j->id }}">{{ $j->nama }}</option>
                         @endforeach
                     </select>
                 </div>
